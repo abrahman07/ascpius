@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Inter:wght@500&family=Inter:wght@600&family=Inter:wght@700&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-page: hsl(var(--page));
+  --color-topbar: hsl(var(--topbar));
+  --color-card: hsl(var(--card));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-button-ghost: hsl(var(--button-ghost));
+  --color-quick-action-violet: hsl(var(--quick-action-violet));
+  --color-quick-action-pink: hsl(var(--quick-action-pink));
+  --color-quick-action-blue: hsl(var(--quick-action-blue));
+  --color-quick-action-green: hsl(var(--quick-action-green));
+  --color-quick-action-orange: hsl(var(--quick-action-orange));
+  --color-quick-action-indigo: hsl(var(--quick-action-indigo));
+  --color-metric-tint-violet: hsl(var(--metric-tint-violet));
+  --color-metric-tint-green: hsl(var(--metric-tint-green));
+  --color-metric-tint-orange: hsl(var(--metric-tint-orange));
+  --color-metric-tint-blue: hsl(var(--metric-tint-blue));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --font-family-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 240 23% 97%;
+    --foreground: 222 22% 15%;
+    --primary: 253 100% 71%;
+    --primary-foreground: 222 22% 15%;
+    --accent: 228 94% 67%;
+    --accent-foreground: 222 22% 15%;
+    --muted: 219 11% 54%;
+    --page: 240 23% 97%;
+    --topbar: 231 66% 8%;
+    --card: 0 0% 100%;
+    --sidebar: 240 33% 99%;
+    --button-ghost: 0 0% 100%;
+    --quick-action-violet: 251 100% 97%;
+    --quick-action-pink: 356 79% 96%;
+    --quick-action-blue: 210 80% 96%;
+    --quick-action-green: 140 50% 95%;
+    --quick-action-orange: 28 81% 96%;
+    --quick-action-indigo: 226 62% 96%;
+    --metric-tint-violet: 258 100% 97%;
+    --metric-tint-green: 142 58% 96%;
+    --metric-tint-orange: 26 100% 97%;
+    --metric-tint-blue: 214 100% 97%;
+    --cat-violet: 253 100% 71%;
+    --cat-pink: 336 77% 61%;
+    --cat-blue: 217 91% 60%;
+    --cat-green: 150 68% 42%;
+    --cat-orange: 25 95% 53%;
+    --cat-indigo: 243 75% 59%;
+    --border: 222 22% 15%;
+    --input: 222 22% 15%;
+    --ring: 253 100% 71%;
+    --radius: 16px;
+    --font-body: "Inter", system-ui, sans-serif;
+  }
+  body {
+     margin: 0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}

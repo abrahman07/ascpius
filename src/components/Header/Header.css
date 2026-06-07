@@ -1,0 +1,205 @@
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+.omni-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #101323;
+  padding: 0 24px;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Arabic font override */
+:root[lang='ar'] .omni-header {
+  font-family: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+}
+
+/* ─── Brand ─────────────────────────────────────────────────────────────────── */
+.omni-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.omni-header__brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Actions ───────────────────────────────────────────────────────────────── */
+.omni-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── Icon button (bell) ────────────────────────────────────────────────────── */
+.omni-header__icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.omni-header__icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+.omni-header__icon-btn:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
+
+/* ─── Language selector ──────────────────────────────────────────────────────── */
+.omni-header__lang-wrapper {
+  position: relative;
+}
+
+.omni-header__lang-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.omni-header__lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.omni-header__lang-btn:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
+
+.omni-header__chevron {
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+}
+
+.omni-header__chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ─── Language dropdown ──────────────────────────────────────────────────────── */
+.omni-header__lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  /* LTR: align to right edge of button */
+  right: 0;
+  left: auto;
+  background: #151c30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  min-width: 148px;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  animation: dropdownFadeIn 0.15s ease;
+}
+
+/* RTL: flip dropdown alignment */
+[dir='rtl'] .omni-header__lang-dropdown {
+  right: auto;
+  left: 0;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.omni-header__lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-align: start;
+  transition: background 0.15s ease, color 0.15s ease;
+  gap: 8px;
+}
+
+.omni-header__lang-option:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #e2e8f0;
+}
+
+.omni-header__lang-option.active {
+  color: #818cf8;
+  background: rgba(129, 140, 248, 0.1);
+}
+
+.omni-header__lang-option-label {
+  flex: 1;
+}
+
+/* ─── Avatar button ──────────────────────────────────────────────────────────── */
+.omni-header__avatar-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: 4px;
+  transition: opacity 0.18s ease, box-shadow 0.18s ease;
+}
+
+.omni-header__avatar-btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.5);
+}
+
+.omni-header__avatar-btn:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
